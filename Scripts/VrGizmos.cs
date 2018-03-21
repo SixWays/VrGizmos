@@ -44,7 +44,7 @@ namespace Sigtrap {
 			alpha = 1;
 
 			_meshes = new Dictionary<PrimitiveType, Mesh>();
-			foreach (PrimitiveType pt in EnumTools.EnumValues<PrimitiveType>()){
+			foreach (PrimitiveType pt in (PrimitiveType[])System.Enum.GetValues(typeof(PrimitiveType))){
 				GameObject go = GameObject.CreatePrimitive(pt);
 				Mesh m = go.GetComponent<MeshFilter>().sharedMesh;
 				Object.DestroyImmediate(go);
